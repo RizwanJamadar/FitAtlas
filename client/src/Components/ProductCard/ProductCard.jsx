@@ -21,7 +21,7 @@ const ProductCard = ({ props, onClick }) => {
     [emblaApi]
   )
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext())
-  // console.log(props);
+  console.log(props);
 
   return (
     <Link to={`/store/${param.category}/${props._id}`} className="link">
@@ -29,7 +29,7 @@ const ProductCard = ({ props, onClick }) => {
         {props.img.length > 1 ? (
           <div className="embla-pc" ref={emblaRef}>
             <div className="embla__container-pc">
-              {props.img.map((img, index) => (
+              {props?.img.map((img, index) => (
                 <div className="embla__slide-pc" key={index}>
                   <img
                     src={img}
@@ -52,8 +52,8 @@ const ProductCard = ({ props, onClick }) => {
               sx={{ color: "#4c7abb" }}
             />
             <p>
-              {props.type === "equipment"
-                ? ""
+              {props.productType === "Equipment"
+                ? props.productName.slice(0,20)+"..."
                 : "Available in " + props.flavour.length + " flavour"}
             </p>
           </div>

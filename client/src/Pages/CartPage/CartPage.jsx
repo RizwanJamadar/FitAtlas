@@ -83,7 +83,7 @@ const CartPage = () => {
     setOpen(false)
   }
 
-  // console.log(state)
+  console.log(state)
 
   return (
     <div className="cart-page-container">

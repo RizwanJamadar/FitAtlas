@@ -63,7 +63,7 @@ const ProductsPage = () => {
             ? data
                 ?.filter((item) => item.productType === "Supplement")
                 .map((item) => <ProductCard key={item.id} props={item} />)
-            : null}
+            : "data not found"}
         </Stack>
       )}
     </>

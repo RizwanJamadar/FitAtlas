@@ -141,6 +141,7 @@ const SingleProductPage = () => {
   }
 
   const Fl = state.readOnly[0]?.flavour ? true : false
+  console.log(Fl);
 
   const [flavour, setFlavour] = React.useState(" ")
 
@@ -393,7 +394,7 @@ const SingleProductPage = () => {
                       addToCart(
                     state.productData[0]._id,
                     state.productData[0].productName,
-                    Fl? state.productData[0].img[state.readOnly[0].flavour?.indexOf(flavour)]: state.productData[0].img[0],
+                    Fl ? state.productData[0].img[state.readOnly[0].flavour?.indexOf(flavour)] : state.productData[0].img[0],
                     Fl ? state.productData[0].flavour[0] : " ",
                     state.readOnly[0].price[price],
                     state.productData[0].quantity,
