@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.route.js";
 import productRoute from "./routes/product.route.js";
+import orderRoute from "./routes/order.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -30,6 +31,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/product", productRoute);
+app.use("/api/orders", orderRoute);
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
