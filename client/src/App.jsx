@@ -16,6 +16,7 @@ import UpdateData from "./Pages/UpdateForm/UpdateData.jsx";
 import Sucess from "./Pages/sucess/Sucess.jsx";
 import Error from "./Pages/error/Error.jsx";
 import AddItem from "./Pages/AddItem/AddItem.jsx";
+import PlacedOrders from "./Pages/PlacedOrders/PlacedOrders.jsx";
 
 function App() {
   return (
@@ -126,6 +127,12 @@ const router = createBrowserRouter([
         path:"/add",
         element:<ProtectedRouteAdmin>
           <AddItem/>
+        </ProtectedRouteAdmin>
+      },
+      {
+        path:"/orders",
+        element:<ProtectedRouteAdmin>
+          <PlacedOrders/>
         </ProtectedRouteAdmin>
       }
     ],

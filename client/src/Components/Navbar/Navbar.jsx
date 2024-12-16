@@ -136,7 +136,7 @@ const Navbar = () => {
                             >
                               <MenuLink text="Add Item" icon={<Add />} />
                             </Link>
-                            <Link className="link" to="/">
+                            <Link className="link" to="/orders">
                               <MenuLink
                                 text="Orders"
                                 icon={<LocalMallIcon />}

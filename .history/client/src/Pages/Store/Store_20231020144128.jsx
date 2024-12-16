@@ -232,9 +232,94 @@ const Store = () => {
             </div>
           </div>
         </div>
+        <div>
+          <div className="trending">
+            <h1>TRENDING NOW</h1>
+          </div>
+          <div className="trending-container">
+            <div className="trending-supplements">Supplememts</div>
+            <div className="trending-equipments">Equipments</div>
+          </div>
+        </div>
       </div>
     </>
   )
 }
 
 export default Store
+
+// <div className="products">
+//     <div className="left">
+//       <div className="filterItem">
+//         <h2>Filter By Type</h2>
+//         <div className="inputItem">
+//           <input type="radio" id="product" value="product" name="price" />
+//           <label htmlFor="product">Products</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="radio" id="equipment" value="equipment" name="price" />
+//           <label htmlFor="equipment">Equipments</label>
+//         </div>
+//       </div>
+//       <div className="filterItem">
+//         <h2>Filter By Categories</h2>
+//         <div className="inputItem">
+//           <input type="checkbox" id="1" value={1} />
+//           <label htmlFor="1">Resistance Band</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="2" value={2} />
+//           <label htmlFor="2">Barbell</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="3" value={3} />
+//           <label htmlFor="3">Dumbbell</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="4" value={4} />
+//           <label htmlFor="4">Roller</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="5" value={5} />
+//           <label htmlFor="5">Rope</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="6" value={6} />
+//           <label htmlFor="6">Trap bar</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="7" value={7} />
+//           <label htmlFor="7">Stationary Bike</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="8" value={8} />
+//           <label htmlFor="8">Stepmill Machine</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="9" value={9} />
+//           <label htmlFor="9">Wheel Roller</label>
+//         </div>
+//         <div className="inputItem">
+//           <input type="checkbox" id="10" value={10} />
+//           <label htmlFor="10">Medicine Ball</label>
+//         </div>
+//       </div>
+//       <div className="filterItem slider">
+//         <h2>Filter By price</h2>
+//         <span>0</span>
+//         <input type="range" min={0} max={1500} onChange={handleRange} />
+//         <span>{maxPrice}</span>
+//       </div>
+//     </div>
+//     <div className="right">
+//       {loading ? (
+//         "Loading"
+//       ) : (
+//         <>
+//           {data.map((product) => (
+//             <ProductCard key={product.id} product={product} />
+//           ))}
+//         </>
+//       )}
+//     </div>
+//   </div>

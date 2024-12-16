@@ -33,15 +33,14 @@ const ExercisesPage = () => {
     method: "GET",
     url: `https://exercisedb.p.rapidapi.com/exercises/target/${muscle}`,
     headers: {
-      'x-rapidapi-key': '17263075fcmshc42d4b1e4dbd7bbp155594jsnfc8461a2b332',
-      'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
-    }
+      "X-RapidAPI-Key": "9942d116d8msh2f911ae9e9e8b31p1b8232jsn065cbf72ed02",
+      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+    },
   }
 
   async function exerciseDbApi(options) {
     try {
       const res = await axios.request(options)
-      console.log(res);
       setExData(res.data)
     } catch (err) {
       setError(err)

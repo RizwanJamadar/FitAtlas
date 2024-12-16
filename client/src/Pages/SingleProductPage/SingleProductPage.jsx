@@ -140,7 +140,7 @@ const SingleProductPage = () => {
     setShowMore(!showMore)
   }
 
-  const Fl = state.readOnly[0]?.flavour ? true : false
+  const Fl = (state.readOnly[0]?.flavour && state.readOnly[0]?.flavour.length !== 0) ? true : false
   console.log(Fl);
 
   const [flavour, setFlavour] = React.useState(" ")

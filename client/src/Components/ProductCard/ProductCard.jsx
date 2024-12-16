@@ -52,8 +52,8 @@ const ProductCard = ({ props, onClick }) => {
               sx={{ color: "#4c7abb" }}
             />
             <p>
-              {props.productType === "Equipment"
-                ? props.productName.slice(0,20)+"..."
+              {(props.productType === "Equipment" || props.category === "accessories")
+                ? props.productName.slice(0,20)+"..." 
                 : "Available in " + props.flavour.length + " flavour"}
             </p>
           </div>

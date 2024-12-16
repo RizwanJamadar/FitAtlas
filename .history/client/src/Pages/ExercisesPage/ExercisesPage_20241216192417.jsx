@@ -41,7 +41,6 @@ const ExercisesPage = () => {
   async function exerciseDbApi(options) {
     try {
       const res = await axios.request(options)
-      console.log(res);
       setExData(res.data)
     } catch (err) {
       setError(err)
