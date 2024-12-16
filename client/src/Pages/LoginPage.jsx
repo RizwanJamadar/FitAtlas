@@ -45,7 +45,7 @@ export default function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/login", {
+      const res = await axios.post(`${import.meta.env.VITE_API_END_POINT}/auth/login`, {
         email,
         password,
       })

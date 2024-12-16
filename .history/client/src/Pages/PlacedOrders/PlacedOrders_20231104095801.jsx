@@ -70,7 +70,7 @@ const PlacedOrders = () => {
         };
   
         const res = await axios.get(
-          `${import.meta.env.VITE_API_END_POINT}/orders/allOrders/`,
+          `http://localhost:8800/api/orders/allOrders/`,
           { headers }
         );
         console.log(res);

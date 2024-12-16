@@ -57,7 +57,7 @@ export default function SignUpPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(`${import.meta.env.VITE_API_END_POINT}/auth/register`, { ...user });
+      await axios.post("http://localhost:8800/api/auth/register", { ...user });
       navigate("/login");
     } catch (error) {
       console.log(error);

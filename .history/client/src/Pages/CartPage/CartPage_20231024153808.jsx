@@ -42,7 +42,7 @@ const CartPage = () => {
       );
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_END_POINT}/product/checkout-payment`,
+        "http://localhost:8800/api/product/checkout-payment",
         {
           method: "POST",
           headers: {

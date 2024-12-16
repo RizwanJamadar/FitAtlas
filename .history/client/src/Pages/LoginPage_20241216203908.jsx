@@ -1,20 +1,20 @@
-import * as React from "react";
-import { useState } from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import Toast from "../Components/Toast/Toast";
+import * as React from "react"
+import { useState } from "react"
+import Avatar from "@mui/material/Avatar"
+import Button from "@mui/material/Button"
+import TextField from "@mui/material/TextField"
+import FormControlLabel from "@mui/material/FormControlLabel"
+import Checkbox from "@mui/material/Checkbox"
+import Link from "@mui/material/Link"
+import Grid from "@mui/material/Grid"
+import Box from "@mui/material/Box"
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
+import Typography from "@mui/material/Typography"
+import Container from "@mui/material/Container"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { useNavigate } from "react-router-dom"
+import axios from "axios"
+import Toast from "../Components/Toast/Toast"
 
 function Copyright(props) {
   return (
@@ -26,43 +26,44 @@ function Copyright(props) {
       {new Date().getFullYear()}
       {"."}
     </Typography>
-  );
+  )
 }
 
-const defaultTheme = createTheme();
+// TODO remove, this demo shouldn't need to reset the theme.
+
+const defaultTheme = createTheme()
 
 export default function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [open, setOpen] = useState(null);
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
 
-  const navigate = useNavigate();
+  const [open, setOpen] = useState(null)
+
+  const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/auth/login`,
-        {
-          email,
-          password,
-        }
-      );
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/store");
+      const res = await axios.post(`${import.meta.env.VITE_API_END_POINT}/auth/login`, {
+        email,
+        password,
+      })
+      localStorage.setItem("currentUser", JSON.stringify(res.data))
+      // console.log(res);
+      navigate("/store")
     } catch (error) {
-      setError(error.response.data);
-      setOpen(true);
+      setError(error.response.data)
+      setOpen(true)
     }
-  };
+  }
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
-      return;
+      return
     }
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   return (
     <>
@@ -97,7 +98,7 @@ export default function SignIn() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label={"Email Address"}
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 autoFocus
@@ -114,8 +115,13 @@ export default function SignIn() {
                   "& fieldset": {
                     borderColor: "white",
                   },
-                  "& .MuiOutlinedInput-root:hover > fieldset": {
-                    borderColor: "#4c7abb",
+                  "&:hover ": {
+                    borderColor: "white",
+                  },
+                  "& .MuiOutlinedInput-root:hover": {
+                    "& > fieldset": {
+                      borderColor: "#4c7abb",
+                    },
                   },
                 }}
               />
@@ -141,8 +147,13 @@ export default function SignIn() {
                   "& fieldset": {
                     borderColor: "white",
                   },
-                  "& .MuiOutlinedInput-root:hover > fieldset": {
-                    borderColor: "#4c7abb",
+                  "&:hover ": {
+                    borderColor: "white",
+                  },
+                  "& .MuiOutlinedInput-root:hover": {
+                    "& > fieldset": {
+                      borderColor: "#4c7abb",
+                    },
                   },
                 }}
               />
@@ -150,7 +161,7 @@ export default function SignIn() {
                 control={
                   <Checkbox
                     value="remember"
-                    sx={{ color: "white" }}
+                    sx={{ border: "white" }}
                     defaultChecked
                   />
                 }
@@ -182,5 +193,5 @@ export default function SignIn() {
         </Container>
       </ThemeProvider>
     </>
-  );
+  )
 }

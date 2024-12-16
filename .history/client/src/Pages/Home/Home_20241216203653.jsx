@@ -14,7 +14,7 @@ import { Tooltip } from "@mui/material"
 const Home = () => {
   const { muscle, setMuscle } = useContext(GlobalStateContext)
   const navigate = useNavigate()
-  // console.log(import.meta.env.VITE_API_END_POINT);
+  console.log();
 
   const [isOn, setIsOn] = useState(true)
   const toggleSwitch = () => {

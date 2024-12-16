@@ -85,7 +85,7 @@ const SingleProductPage = () => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const location = useLocation()
   const productId = location.pathname.split("/")[3]
-  const url = `${import.meta.env.VITE_API_END_POINT}/product/find/${productId}`
+  const url = `http://localhost:8800/api/product/find/${productId}`
   const [data, setData] = useState(null)
   const [error, setError] = useState(false)
 

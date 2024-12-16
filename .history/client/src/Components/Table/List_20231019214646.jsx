@@ -37,7 +37,7 @@ const List = () => {
       };
 
       const res = await axios.delete(
-        `${import.meta.env.VITE_API_END_POINT}/product/${id}`,
+        `http://localhost:8800/api/product/${id}`,
         { headers }
       );
       setMessage(res.data)

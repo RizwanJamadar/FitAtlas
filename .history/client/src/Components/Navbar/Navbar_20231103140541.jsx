@@ -38,7 +38,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_END_POINT}/auth/logout`)
+      const res = await axios.post("http://localhost:8800/api/auth/logout")
       setMessage(res.data)
       setOpen(true)
       localStorage.setItem("currentUser", null)
