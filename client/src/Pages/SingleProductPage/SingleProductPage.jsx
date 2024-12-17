@@ -140,7 +140,7 @@ const SingleProductPage = () => {
     setShowMore(!showMore)
   }
 
-  const Fl = (state.readOnly[0]?.flavour && state.readOnly[0]?.flavour.length !== 0) ? true : false
+  const Fl = (state?.readOnly[0]?.flavour && state?.readOnly[0]?.flavour.length !== 0) ? true : false
   console.log(Fl);
 
   const [flavour, setFlavour] = React.useState(" ")
@@ -156,12 +156,12 @@ const SingleProductPage = () => {
   const handleChange = (event) => {
     setFlavour(event.target.value)
 
-    selectFlavour(state.readOnly[0]._id, event.target.value)
+    selectFlavour(state?.readOnly[0]._id, event.target.value)
   }
 
   const handleWeight = (event) => {
     setWeight(event.target.value)
-    selectWeight(state.readOnly[0]._id, event.target.value, price)
+    selectWeight(state?.readOnly[0]._id, event.target.value, price)
   }
 
   //prettier-ignore
@@ -184,8 +184,8 @@ const SingleProductPage = () => {
   }, [emblaMainApi, onSelect])
 
   useEffect(() => {
-    console.log(state.productData)
-  }, [state.productData])
+    console.log(state?.productData)
+  }, [state?.productData])
 
   const price = state?.readOnly[0]?.weight.indexOf(weight);
 
@@ -216,7 +216,7 @@ const SingleProductPage = () => {
                 <div className="embla-thumbs">
                   <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
                     <div className="embla-thumbs__container">
-                      {state.readOnly[0]?.displayimg.map((img, index) => (
+                      {state?.readOnly[0]?.displayimg.map((img, index) => (
                         <Thumb
                           onClick={() => onThumbClick(index)}
                           selected={index === selectedIndex}
@@ -238,7 +238,7 @@ const SingleProductPage = () => {
                 <div className="embla-sp">
                   <div className="embla__viewport" ref={emblaMainRef}>
                     <div className="embla__container-sp">
-                      {state.readOnly[0]?.displayimg.map((img, index) => (
+                      {state?.readOnly[0]?.displayimg.map((img, index) => (
                         <div className="embla__slide-sp" key={index}>
                           <img
                             className="embla__slide__img"
@@ -266,20 +266,20 @@ const SingleProductPage = () => {
             >
               <div>
                 <p style={{ fontSize: "50px", margin: 0 }}>
-                  {state.readOnly[0]?.productName.toUpperCase()}
+                  {state?.readOnly[0]?.productName.toUpperCase()}
                 </p>
 
                 <Rating
                   readOnly
                   value={
-                    state.readOnly[0]?.rating ? state.readOnly[0]?.rating : 0
+                    state?.readOnly[0]?.rating ? state?.readOnly[0]?.rating : 0
                   }
                   sx={{ color: "#4c7abb", margin: "15px 0" }}
                 />
 
                 <p style={{ fontSize: "30px" }}>
                   <CurrencyRupee />
-                  {state.readOnly[0]?.price[price]}
+                  {state?.readOnly[0]?.price[price]}
                 </p>
               </div>
               <Stack
@@ -290,7 +290,7 @@ const SingleProductPage = () => {
                   padding: "40px 0",
                 }}
               >
-                {state.readOnly[0]?.flavour.length !== 0 && (
+                {state?.readOnly[0]?.flavour.length !== 0 && (
                   <div>
                     <p>Flavour</p>
                     <Box sx={{ minWidth: 120 }}>
@@ -315,7 +315,7 @@ const SingleProductPage = () => {
                             },
                           }}
                         >
-                          {state.readOnly[0]?.flavour?.map((item, index) => (
+                          {state?.readOnly[0]?.flavour?.map((item, index) => (
                             <MenuItem key={index} value={item}>
                               {item}
                             </MenuItem>
@@ -325,7 +325,7 @@ const SingleProductPage = () => {
                     </Box>
                   </div>
                 ) }
-                {state.readOnly[0]?.weight ? (
+                {state?.readOnly[0]?.weight ? (
                   <div>
                     <p>Weight</p>
                     <Box sx={{ minWidth: 120 }}>
@@ -350,7 +350,7 @@ const SingleProductPage = () => {
                             },
                           }}
                         >
-                          {state.readOnly[0]?.weight?.map((item, index) => (
+                          {state?.readOnly[0]?.weight?.map((item, index) => (
                             <MenuItem key={index} value={item}>
                               {item}
                             </MenuItem>
@@ -376,7 +376,7 @@ const SingleProductPage = () => {
               >
                 <div style={{}}>
                   <CartCounter
-                    count={state.readOnly[0]?.quantity}
+                    count={state?.readOnly[0]?.quantity}
                     incrementItem={() => {
                       incrementItem(data ? data._id : " ")
                     }}
@@ -392,14 +392,14 @@ const SingleProductPage = () => {
                     onClick={() => {
                       //prettier-ignore
                       addToCart(
-                    state.productData[0]._id,
-                    state.productData[0].productName,
-                    Fl ? state.productData[0].img[state.readOnly[0].flavour?.indexOf(flavour)] : state.productData[0].img[0],
-                    Fl ? state.productData[0].flavour[0] : " ",
-                    state.readOnly[0].price[price],
-                    state.productData[0].quantity,
-                    state.productData[0].weight[0],
-                    state.productData[0].type
+                    state?.productData[0]._id,
+                    state?.productData[0].productName,
+                    Fl ? state?.productData[0].img[state?.readOnly[0].flavour?.indexOf(flavour)] : state?.productData[0].img[0],
+                    Fl ? state?.productData[0].flavour[0] : " ",
+                    state?.readOnly[0].price[price],
+                    state?.productData[0].quantity,
+                    state?.productData[0].weight[0],
+                    state?.productData[0].type
                   )
                     }}
                   >
@@ -411,9 +411,9 @@ const SingleProductPage = () => {
                 <div className="product-description">
                   <h2>Description</h2>
                   <p className={showMore ? "show-more" : ""}>
-                    {state.readOnly[0]?.desc}
+                    {state?.readOnly[0]?.desc}
                   </p>
-                  {state.readOnly[0]?.desc.length > 100 && (
+                  {state?.readOnly[0]?.desc.length > 100 && (
                     <button onClick={toggleShowMore}>
                       {showMore ? "Show less" : "Show more"}
                     </button>

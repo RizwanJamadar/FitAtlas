@@ -90,7 +90,7 @@ const CartPage = () => {
       <Toast open={open} close={handleClose} type="info">
         {message}
       </Toast>
-      {state.items.length !== 0 ? (
+      {state?.items.length !== 0 ? (
         <Stack direction="row" justifyContent="flex-start">
           <Stack
             spacing={5}
@@ -122,7 +122,7 @@ const CartPage = () => {
               }}
             >
               <Badge
-                badgeContent={state.totalItems}
+                badgeContent={state?.totalItems}
                 color="primary"
                 size="large"
                 sx={{
@@ -137,7 +137,7 @@ const CartPage = () => {
               <div style={{ marginLeft: "80px" }}>PRICE</div>
               <div>Quantity</div>
             </Stack>
-            {state.items.map((val) => {
+            {state?.items.map((val) => {
               return (
                 <CartItem
                   id={val.id}
@@ -177,7 +177,7 @@ const CartPage = () => {
             <div className="final-amt">
               <div style={{ display: "flex", alignItems: "center" }}>
                 <CurrencyRupeeIcon sx={{ fontSize: "40px" }} />
-                {state.totalAmount}
+                {state?.totalAmount}
               </div>
               <Typography sx={{ mt: "10px", fontFamily: "Gr" }}>
                 *Shipping applied at checkout

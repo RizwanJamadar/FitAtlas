@@ -65,7 +65,8 @@ const Home = () => {
         }
       />
 
-      <MuscleLayout condition={isOn} onClick={handleClick} />
+      {/* <MuscleLayout condition={isOn} onClick={handleClick} /> */}
+      <h1>Welcome to home page</h1>
     </>
   )
 }

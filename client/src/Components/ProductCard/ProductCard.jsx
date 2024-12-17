@@ -26,7 +26,7 @@ const ProductCard = ({ props, onClick }) => {
   return (
     <Link to={`/store/${param.category}/${props._id}`} className="link">
       <div className="product-card">
-        {props.img.length > 1 ? (
+        {props?.img?.length > 1 ? (
           <div className="embla-pc" ref={emblaRef}>
             <div className="embla__container-pc">
               {props?.img.map((img, index) => (

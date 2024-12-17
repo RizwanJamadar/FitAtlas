@@ -9,7 +9,7 @@ export const SpReducer = (state, action) => {
   if (action.type === "SELECT_FLAVOUR") {
     return {
       ...state,
-      productData: state.productData.map((item) => {
+      productData: state?.productData.map((item) => {
         return {
           ...item,
           flavour: [action.payload.flavour],
@@ -21,7 +21,7 @@ export const SpReducer = (state, action) => {
   if (action.type === "SELECT_WEIGHT") {
     return {
       ...state,
-      productData: state.productData.map((item) => {
+      productData: state?.productData.map((item) => {
         return {
           ...item,
           weight: [action.payload.weight],
@@ -34,13 +34,13 @@ export const SpReducer = (state, action) => {
   if (action.type === "INCREMENT_ITEM") {
     return {
       ...state,
-      productData: state.productData.map((item) => {
+      productData: state?.productData.map((item) => {
         return {
           ...item,
           quantity: item.quantity + 1,
         }
       }),
-      readOnly: state.readOnly.map((item) => {
+      readOnly: state?.readOnly.map((item) => {
         return {
           ...item,
           quantity: item.quantity + 1,
@@ -51,13 +51,13 @@ export const SpReducer = (state, action) => {
   if (action.type === "DECREMENT_ITEM") {
     return {
       ...state,
-      productData: state.productData.map((item) => {
+      productData: state?.productData.map((item) => {
         return {
           ...item,
           quantity: item.quantity - 1,
         }
       }),
-      readOnly: state.readOnly.map((item) => {
+      readOnly: state?.readOnly.map((item) => {
         return {
           ...item,
           quantity: item.quantity - 1,

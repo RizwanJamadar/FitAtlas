@@ -15,10 +15,10 @@ export const reducer = (state, action) => {
       supplement: supplement,
     }
 
-    if (state.items.find((item) => item.id === cartProduct.id)) {
+    if (state?.items.find((item) => item.id === cartProduct.id)) {
       return {
         ...state,
-        items: state.items.map((item) => {
+        items: state?.items.map((item) => {
           if (item.id === cartProduct.id) {
             return {
               ...item,
@@ -37,14 +37,14 @@ export const reducer = (state, action) => {
 
     return {
       ...state,
-      items: [...state.items, cartProduct],
+      items: [...state?.items, cartProduct],
     }
   }
 
   if (action.type === "SELECT_FLAVOUR") {
     return {
       ...state,
-      items: state.items.map((item) => {
+      items: state?.items.map((item) => {
         if (item.id === action.payload.id) {
           return {
             ...item,
@@ -60,7 +60,7 @@ export const reducer = (state, action) => {
   if (action.type === "SELECT_WEIGHT") {
     return {
       ...state,
-      items: state.items.map((item) => {
+      items: state?.items.map((item) => {
         if (item.id === action.payload.id) {
           return {
             ...item,
@@ -77,14 +77,14 @@ export const reducer = (state, action) => {
   if (action.type === "REMOVE_ITEM") {
     return {
       ...state,
-      items: state.items.filter((item) => item.id !== action.payload),
-      readOnly: state.readOnly.filter((item) => item.id !== action.payload),
+      items: state?.items.filter((item) => item.id !== action.payload),
+      readOnly: state?.readOnly.filter((item) => item.id !== action.payload),
     }
   }
   if (action.type === "INCREMENT_ITEM") {
     return {
       ...state,
-      items: state.items.map((item) => {
+      items: state?.items.map((item) => {
         if (item.id === action.payload) {
           return {
             ...item,
@@ -94,7 +94,7 @@ export const reducer = (state, action) => {
         }
         return item
       }),
-      readOnly: state.readOnly.map((item) => {
+      readOnly: state?.readOnly.map((item) => {
         if (item.id === action.payload) {
           return {
             ...item,
@@ -108,7 +108,7 @@ export const reducer = (state, action) => {
   if (action.type === "DECREMENT_ITEM") {
     return {
       ...state,
-      items: state.items.map((item) => {
+      items: state?.items.map((item) => {
         if (item.id === action.payload) {
           return {
             ...item,
@@ -117,7 +117,7 @@ export const reducer = (state, action) => {
         }
         return item
       }),
-      readOnly: state.readOnly.map((item) => {
+      readOnly: state?.readOnly.map((item) => {
         if (item.id === action.payload) {
           return {
             ...item,
@@ -132,18 +132,18 @@ export const reducer = (state, action) => {
   if (action.type === "TOTAL") {
     return {
       ...state,
-      totalAmount: state.items.reduce(
+      totalAmount: state?.items?.reduce(
         (acc, curr) => acc + parseInt(curr.price) * curr.quantity,
         0
       ),
-      totalItems: state.items.reduce((acc, curr) => acc + curr.quantity, 0),
+      totalItems: state?.items.reduce((acc, curr) => acc + curr.quantity, 0),
     }
   }
 
   if (action.type === "SUB_TOTAL") {
     return {
       ...state,
-      items: state.items.map((item) => {
+      items: state?.items.map((item) => {
         return {
           ...item,
           total: item.price[0] * item.quantity,

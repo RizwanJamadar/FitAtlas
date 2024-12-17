@@ -96,7 +96,7 @@ const Navbar = () => {
               style={{ textDecoration: "none" }}
             >
               <Badge
-                badgeContent={state.items.length}
+                badgeContent={state?.items?.length}
                 color="primary"
                 sx={{
                   "& .MuiBadge-badge": {

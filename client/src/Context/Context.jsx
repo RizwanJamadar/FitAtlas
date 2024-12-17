@@ -121,8 +121,8 @@ export const GlobalStateProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    localStorage.setItem("cartItem", JSON.stringify(state.items));
-  }, [state.items])
+    localStorage.setItem("cartItem", JSON.stringify(state?.items));
+  }, [state?.items])
   
 
   //to remove item from cart
@@ -148,7 +148,7 @@ export const GlobalStateProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: "TOTAL" });
-  }, [state.items]);
+  }, [state?.items]);
 
   const clearCart = () =>{
     dispatch({type:"CLEAR_CART"})
