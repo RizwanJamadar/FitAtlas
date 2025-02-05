@@ -13,6 +13,10 @@ FitAtlas is an all-in-one online store for fitness enthusiasts, offering a vast 
 
 Additionally, users can explore **muscle information** by clicking on specific body parts.
 
+## Why Choose FitAtlas?
+
+FitAtlas is designed to make your fitness journey seamless and efficient. Whether you're a beginner or a professional athlete, our curated selection of products ensures you get the best quality for your training. With easy navigation, secure payment options, and insightful muscle information, FitAtlas brings a holistic approach to fitness shopping.
+
 ## 🚀 Features
 
 ✅ **E-Commerce Store** – Browse and purchase fitness products\
@@ -25,9 +29,9 @@ Additionally, users can explore **muscle information** by clicking on specific b
 
 - **Frontend**: React / Vite
 - **Backend**: Node.js / Express
-- **Database**: MongoDB / Firebase
+- **Database**: MongoDB
 - **Authentication**: JWT / Firebase Auth
-- **Payment Gateway**: Dummy Integration
+- **Payment Gateway**: Stripe
 - **Hosting**: Render / Vercel
 
 ## 📺 Installation
